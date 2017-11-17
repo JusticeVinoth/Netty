@@ -1,0 +1,9 @@
+package protobuffer;
+
+option java_package = "com.profile";
+option java_outer_classname = "MyProfile";
+
+message Profile{
+	required string firstName = 1;
+	required string lastName = 2;
+}

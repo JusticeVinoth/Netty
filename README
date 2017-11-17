@@ -1,0 +1,30 @@
+Steps to Run the project:
+
+1.Get the project from github.
+	https://github.com/JusticeVinoth/Apache-kafka
+	
+2.Compile the project using sbt command in the console.
+	-> $ sbt
+	-> $ clean
+	-> $ compile
+	-> $ run 
+	Now application running in localhost:9000 port
+	
+3.Run Apache zookeeper 
+4.Run Apache Kafka
+5.In Apache kafka run producer and consumer
+	Producer:
+		kafka-console-producer.bat --broker-list localhost:9092 --topic my-profile
+	Consumer:
+		kafka-console-consumer.bat --zookeeper localhost:2181 --topic my-profile
+		
+6.Using postman just hit the following url:
+	URL:http://localhost:9020/get/profile
+	method : POST
+	Body : 
+			{
+			"firstname":"Neethithevan",
+			"lastname":"R"
+		    }
+	 pass the data as Json.
+7.You will get the result in apache kafka consumer console 
