@@ -53,7 +53,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 		profile.setFirstName(reqData.get("firstname").asText().toString());
 		profile.setLastName(reqData.get("lastname").asText().toString());
 
-		producer.send(new ProducerRecord<String, String>("test", "test", profile.toString()));
+		producer.send(new ProducerRecord<String, String>("my-profile", "my-profile", profile.toString()));
 		producer.close();
 		ctx.write(response.retain());
 	}
