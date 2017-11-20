@@ -36,7 +36,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<FullHttpReque
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, FullHttpRequest msg) throws Exception {
 		System.out.println("HttpServerHandler.channelRead0()");
-		if (msg.getMethod().equals(HttpMethod.POST) && msg.getUri().equals("/hello")) {
+		if (msg.getMethod().equals(HttpMethod.POST) && msg.getUri().equals("/get/profile")) {
 			System.out.println("Data ::: ");
 			System.out.println(msg.content().toString(Charset.forName("UTF-8")));
 			getProfile(ctx, msg);
